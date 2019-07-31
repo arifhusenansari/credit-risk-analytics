@@ -1,5 +1,9 @@
 # credit-risk-analytics
-Machine learning credit risk analytics model for scoring and application approval system. Model is build on data provided by upGrad. Dataset contains demographics and Credit bureau data for over 71295 applicants. 
+Machine learning credit risk analytics model for scoring and application approval. Model is build on data provided by upGrad. Dataset contains demographics and Credit bureau data for 71295 applicants. 
+
+# What has been done throught out analysis and model?
+I have built machine learning model to predict the probability of applicant to become default using input variables. Different algorithms has been implemented and the one with best evaluation parameter is selected. 
+After model selection, scorecard is defined and using trade off between credit loss improvement and revenue loss due to not giving loan to potential customer, we have decided particular cut off score. This cutoff score will be used to approve credit card for future applicants. 
 
 # Tools and Skills
 - R 
@@ -25,5 +29,5 @@ Machine learning credit risk analytics model for scoring and application approva
 
 # Analysis 
 
-All the analysis are provied in details in the power point file in the repository. 
+All the analysis are explained in detail in the powerpoint presentation. 
 
