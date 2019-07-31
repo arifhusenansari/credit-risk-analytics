@@ -1,4 +1,4 @@
-# credit-risk-analytics
+# credit-risk-analytics (score card and application approval model)
 Machine learning credit risk analytics model for scoring and application approval. Model is build on data provided by upGrad. Dataset contains demographics and Credit bureau data for 71295 applicants. 
 
 # What has been done throught out analysis and model?
