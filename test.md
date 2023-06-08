@@ -50,7 +50,12 @@ Three database in MSSQL server are created to represent different zone. metadata
 4.  metadata
 
 This whole data pipeline cab be built using ADF as orchestrator and DataBricks notebook/python file as data processing code and Azure data lake will act as Storage having three container for three different zone. 
-Databricks with Delta lakehouse feature can provide lot's of benefits. 
+Databricks with Delta lakehouse feature can provide lot's of benefits.
+
+# Analytical View
+Two view are implemented in enrichment and data will be loaded to discovery.
+1.  yearlyoverview [discovery].[yearlyoverview] : I have consider last 12 month revenue for the tenant for sales. For average calculaton, I have divided sales with month having sales in last12 months. So 0 Sales months are not counted for Average. 
+2.  categoryperformance [discovery].[categoryperformance]
 
 # Run the project
 Below are steps to Run project locally.
@@ -66,6 +71,7 @@ Below are steps to Run project locally.
 - Open DBUtility.py file and provide server details. Better to use SQLAuthentication.
 - Navigate to EndToEndLoad.py
 - Execute the python script.
+- view definition to load data in fact tables based on business logic is in Solution\viwes folder. No need to run this view data ingestion pipeline will automatically create views during data ingestion process. 
 
 # Scalability
 - Any new data souce can be easily added. by doing proper configuration. We can on board new csv file. 
@@ -74,6 +80,6 @@ Below are steps to Run project locally.
 - All table has datalineage id and this will help to check the flow of data in different layer. 
 
 # What else can be implemented
-- there are several things we can implement. Due to lake of time. In this solution they are not implemented. 
-- new metatable e.g. taskincrementalload -> This will have configuration for increamental load from source to target. Only incremental data will be loaded. etl_lastmodified_date can be used. 
+- there are several things we can implement. Due to lake of time. In this solution those are not implemented. 
+- new metatable e.g. taskincrementalload -> This will have configuration for increamental load from source to target. Only incremental data will be loaded. etl_lastmodified_date can be used.
 - In Merge, I have not implemented logic to update only updated data. But can be implemented easly with the help of configuratino and SHA256 code.
